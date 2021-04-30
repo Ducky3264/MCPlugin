@@ -21,7 +21,7 @@ public class HelloCommand implements CommandExecutor {
         p.sendMessage("Hi!");
         return true;
         /**
-         * Decomment this section if you want to add permissions!
+         * Decomment this section if you want to add permissions! Will require an additional plugin such as vault.
          * if (p.hasPermission("hello.use")) {
             p.sendMessage("Hi!");
             return true;
