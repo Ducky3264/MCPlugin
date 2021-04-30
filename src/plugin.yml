@@ -1,6 +1,6 @@
 name: HelloWorld
 version: 1.0
-api-version: 1.16.1
+api-version: 1.16
 Author: davidmc
 main: org.davidmc.test1.Main
 description: hello world
