@@ -5,11 +5,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-
 import org.bukkit.inventory.Inventory;
-
+import org.bukkit.inventory.InventoryHolder;
 import java.util.Arrays;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryDragEvent;
@@ -17,14 +15,21 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 public class MyEvents implements Listener {
+    public class DavidMCHolder implements InventoryHolder {  
+        @Override
+        public Inventory getInventory() {
+            return null;
+        }
+    }
     private final Inventory inv;
     public MyEvents() {
-        inv = Bukkit.createInventory(null, 9, "Menu");
+        inv = Bukkit.createInventory(new DavidMCHolder(), 9, "Menu");
         initalizeItems();
     }
+
     public void initalizeItems() {
         for (int i = 1; i <= 9; i++) {
-            Bukkit.getLogger().info(String.valueOf(i));
+            //Bukkit.getLogger().info(String.valueOf(i));
             if (i == 4) {
                 inv.addItem(cgit(Material.DIAMOND_SWORD, "Example Sword", 1, "§aFirst line of the lore"));
             } else if (i == 5) {
@@ -54,9 +59,9 @@ public class MyEvents implements Listener {
     }**/
     @EventHandler
     public void OIC(final InventoryClickEvent e) {
-        Bukkit.getLogger().info("OIC hit.");
-        Bukkit.getLogger().info((e.getClickedInventory().getType() == InventoryType.PLAYER) ? "statement is true" : "Statement is false.");
-        if (e.getClickedInventory().getType() == InventoryType.PLAYER) return;
+        //Bukkit.getLogger().info("OIC hit.");
+        //Bukkit.getLogger().info((e.getClickedInventory().getType() == InventoryType.PLAYER) ? "statement is true" : "Statement is false.");
+        if (e.getClickedInventory().getType() == InventoryType.PLAYER || !(e.getClickedInventory().getHolder() instanceof DavidMCHolder)) return;
         e.setCancelled(true);
         final ItemStack clickedItem = e.getCurrentItem();
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
@@ -65,9 +70,9 @@ public class MyEvents implements Listener {
     } 
     @EventHandler
     public void onInventoryClick(final InventoryDragEvent e) {
-        Bukkit.getLogger().info("On inventory hit.");
-        if (e.getInventory().getType() == InventoryType.PLAYER) {
+        //Bukkit.getLogger().info("On inventory hit.");
+        if (e.getInventory().getType() != InventoryType.PLAYER || (e.getInventory().getHolder() instanceof DavidMCHolder))
           e.setCancelled(true);
         }
     }
-}
+

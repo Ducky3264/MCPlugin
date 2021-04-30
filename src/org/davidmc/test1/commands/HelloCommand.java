@@ -23,7 +23,7 @@ public class HelloCommand implements CommandExecutor {
         events.openInventory(p);
         return true;
         /**
-         * Decomment this section if you want to add permissions! Will require an additional plugin such as vault.
+         * Decomment this section if you want to add permissions! Will require an additional plugin such as vault or luckyperms, which is what I use.
          * if (p.hasPermission("hello.use")) {
             p.sendMessage("Hi!");
             return true;

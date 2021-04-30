@@ -3,5 +3,6 @@
         "lib/**/*.jar",
         "c:\\Users\\David\\Spigot-Server\\spigot-1.16.1.jar",
         "c:\\Users\\David\\Spigot-Server\\1.16.1\\spigot-1.16.1.jar"
-    ]
+    ],
+    "java.dependency.syncWithFolderExplorer": true
 }
