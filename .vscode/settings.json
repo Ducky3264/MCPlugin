@@ -2,6 +2,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\David\\Spigot-Server\\spigot-1.16.5.jar",
-        "c:\\Users\\David\\Spigot-Server\\spigot-1.16.1.jar"
+        "c:\\Users\\David\\Spigot-Server\\spigot-1.16.1.jar",
+        "c:\\Users\\David\\Spigot-Server\\1.16.1\\spigot-1.16.1.jar"
     ]
 }
