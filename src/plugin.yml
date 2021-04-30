@@ -1,0 +1,9 @@
+name: HelloWorld
+version: 1.0
+Author: davidmc
+main: org.davidmc.test1.Main
+description: hello world
+commands:
+  hello:
+    aliases: [hi]
+    description: This is the hello command.
