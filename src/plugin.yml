@@ -8,3 +8,5 @@ commands:
   hello:
     aliases: [hi]
     description: This is the hello command.
+  ebow:
+    description: Gives you an explosive bow.
